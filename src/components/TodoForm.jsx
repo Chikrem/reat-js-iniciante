@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TodoForm() {
+function TodoForm({addTodo}) {
   const [text, setText] = useState(""); // State to hold the text input value
   const [category, setCategory] = useState(""); // State to hold the selected category
 
@@ -15,6 +15,7 @@ function TodoForm() {
     console.log("Category:", category);
     setText("");
     setCategory("");
+    addTodo(text, category); // Call the addTodo function passed as a prop
     return true; 
   };
 

@@ -51,6 +51,30 @@ button:hover {
   background-color: #536c2c;
 }
 
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content>h3,h4{
+  margin: 8px 0;
+}
+
+.actions{
+  gap: 10px;
+}
+
+.todo-list{
+  list-style-type: none;
+  padding: 0;
+}
+
 .todo-form{
   padding-bottom: 1.5rem;
 }
