@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Todo from "./components/toDo";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -15,11 +16,12 @@ function App() {
       <h1>
         Lista de Tarefas
       </h1>
-      <div className="todo-list">
+      <div className="todo-list" id="todo-list">
         {todos.map((todo) => (
           <Todo todo={todo}/> // Pass the "todo" object to the toDo component
         ))}
       </div>
+      <TodoForm />
     </div>
   );
 }
