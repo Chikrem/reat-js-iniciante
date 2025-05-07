@@ -18,7 +18,7 @@ function App() {
       </h1>
       <div className="todo-list" id="todo-list">
         {todos.map((todo) => (
-          <Todo todo={todo}/> // Pass the "todo" object to the toDo component
+          <Todo key={todo.id} todo={todo}/> // Pass the "todo" object to the toDo component
         ))}
       </div>
       <TodoForm />
