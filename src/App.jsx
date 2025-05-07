@@ -28,8 +28,17 @@ function App() {
     ]);
   };
 
+  const completeTodo = (id) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
+    newTodos[todoIndex].isCompleted = !newTodos[todoIndex].isCompleted;
+    setTodos(newTodos);
+  };
+
   const removeTodo = (id) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    const newTodos = [...todos]
+    const filteredTodos = newTodos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
   };
 
   return (
@@ -37,10 +46,10 @@ function App() {
       <h1>Lista de Tarefas</h1>
       <div className="todo-list" id="todo-list">
         {todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} removeTodo={removeTodo}/> // Pass the "todo" object to the toDo component
+          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/> // Pass the "todo" object to the toDo component
         ))}
       </div>
-      <TodoForm addTodo={addTodo} removeTodo={removeTodo}/>
+      <TodoForm addTodo={addTodo}/>
     </div>
   );
 }
