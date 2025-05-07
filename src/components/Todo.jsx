@@ -1,4 +1,4 @@
-function Todo({ todo, removeTodo, completeTodo }) {
+const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
     <div
       className="todo"
