@@ -1,11 +1,11 @@
-const Filter = () => {
+const Filter = ({filter, setFilter}) => {
   return (
     <div className="filter">
       <h2>Filtrar: </h2>
       <div className="filter-options">
         <div>
             <h4>Status:</h4>
-            <select>
+            <select value={filter} onChange={(e) => setFilter(e.target.value)}>
                 <option value="all">Todos</option>
                 <option value="completed">Concluídos</option>
                 <option value="not-completed">Não Concluídos</option>
